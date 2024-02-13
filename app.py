@@ -2,6 +2,8 @@ import paho.mqtt.client as paho
 import time
 import streamlit as st
 import json
+from PIL import Image
+
 values = 0.0
 act1="OFF"
 
@@ -25,7 +27,11 @@ client1.on_message = on_message
 
 
 
-st.title("MQTT Control")
+st.title("Control del Robot ROBI")
+
+image = Image.open('Robi.png')
+
+st.image(image, caption='ROBI')
 
 if st.button('ON'):
     act1="ON"
